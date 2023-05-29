@@ -2,7 +2,7 @@ name: Build
 on:
   push:
     branches:
-      - master
+      - main
   pull_request:
     types: [opened, synchronize, reopened]
 jobs:
@@ -16,6 +16,5 @@ jobs:
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@master
         env:
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}  
-	  sonar.projectKey: ${{ secrets.GITHUB_TOKEN }}  
-	
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}  # Update the variable name to match the property in sonar-project.properties
+          sonar.projectKey: ${{ secrets.GITHUB_TOKEN }}  # Update the variable name to match the property in sonar-project.properties
